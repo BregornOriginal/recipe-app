@@ -11,9 +11,18 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
+      <nav class='nav_options'>
+        <div class='home_button'>
+          <a href="/" class='create_button'>Home</a>
+        </div>
+        <%= button_to "Log out", destroy_user_session_path, { method: :delete, data: { turbo: false}, class: 'create_button Log out'} %>
+      </nav>
+    <% end %>
+    
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  
+
     <%= yield %>
   </body>
 </html>
