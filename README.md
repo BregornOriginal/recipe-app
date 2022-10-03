@@ -1,75 +1,89 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Recipe App
 
-# Project Name
+The Recipe app keeps track of all your recipes, ingredients, and inventory. 
+It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. 
+Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
-> Description the project.
+This app was created with Rails, including Devise for authentication and CanCanCan for authorizations.
 
+There is documentation with the differents Endpoints of the API, where the Developer can check the routes and parameters that he need
+to:
 
-## Built With
+/api-docs/index.html
 
-- Major languages
-- Frameworks
-- Technologies used
+- GET a post
+- GET a comment
+- POST a comment
 
-## Live Demo (if available)
+## Live Version
 
-[Live Demo Link](https://livedemo.com)
+[Avaible Soon]()
 
+## Built With:
+
+- Ruby on Rails
+- RSpec
+- SASS
+- PostgresSQL
+- Devise
+- CanCanCan
+- JWT
+
+Prerequisites
+
+- Ruby 3.1.2 or newer
+- Rails 7.0.4 or newer
+- Git
+- NPM
+- PostgreSQL
+- Modern web browser
 
 ## Getting Started
+- To get a local copy of this project clone this repository or download the Zip folder:
+git clone https://github.com/BregornOriginal/blog-app.git
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+- To get started, In the root directory run:
+gem install bundler
 
+- Then run:
+bundle install
 
-To get a local copy up and running follow these simple example steps.
+- Run ruby on rails app in the Command Line:
+rails s
 
-### Prerequisites
-
-### Setup
-
-### Install
+- Then browse http://localhost:3000
 
 ### Usage
 
-### Run tests
+To edit this project:
 
-### Deployment
+- Open the repository you cloned with a code editor that you like.
+
+- Edit the code as you want.
+
+## Author:
+
+👤 **@BregornOriginal**
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-BregornOriginal-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/BregornOriginal)
+
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-Bregorn-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/Bregorn)
+
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-JulioGagliardi-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/julio-gagliardi/)
+
+👤 **Fabien**
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-fibini-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/fibini)
+
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-Onenewpage1-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/Onenewpage1)
+
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-FabienBrathwaite-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/fabien-brathwaite/)
 
 
+## :star2: Show your support
 
-## Authors
+Give a :star: if you like my project!
 
-👤 **Author1**
+## :pencil: License
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](https://github.com/Gopxfs/catalog-of-my-things/blob/main/LICENSE) licensed.
