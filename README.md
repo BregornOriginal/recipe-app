@@ -9,12 +9,6 @@ This app was created with Rails, including Devise for authentication and CanCanC
 There is documentation with the differents Endpoints of the API, where the Developer can check the routes and parameters that he need
 to:
 
-/api-docs/index.html
-
-- GET a post
-- GET a comment
-- POST a comment
-
 ## Live Version
 
 [Avaible Soon]()
