@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /recipes or /recipes.json
@@ -10,7 +9,11 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @user = User.find(params[:user_id])
+    @recipe = Recipe.find(params[:id])
+    @recipes = Recipe.where(user_id: @user).order(updated_at: :asc).limit(2)
+  end
 
   # GET /recipes/new
   def new
@@ -24,12 +27,11 @@ class RecipesController < ApplicationController
   # POST /recipes or /recipes.json
   def create
     @user = current_user
-    @recipe = @user.recipe.create(recipe_params)
-    @recipe = Recipe.new(recipe_params)
+    @recipe = @user.recipes.create(recipe_params)
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to user_recipes_url(@user.id), notice: 'Recipe was successfully created.' }
+        format.html { redirect_to user_recipes_path(@user.id), notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,19 +42,17 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
+    @user = current_user
+    @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to user_recipes_path(@user.id), notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-
-  def set_recipe
-    @recipe = Recipe.find(params[:id])
-  end
 
   # Only allow a list of trusted parameters through.
   def recipe_params
