@@ -3,10 +3,11 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+    can :read,Food
 
     return unless user.present?
 
-    can :read, Food
+    can :manage, Food, user_id: user.id
 
     # Define abilities for the user here. For example:
     #

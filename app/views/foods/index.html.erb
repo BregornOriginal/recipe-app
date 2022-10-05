@@ -11,11 +11,11 @@
 
 <div id="foods">
   <% @foods.each do |food| %>
-    <%if can? :read, food %>
+    <%if can? :manage, food %>
       <%= render food %>
     <% end %>
   <%end%>
 </div>
 </div>
 
-<%= link_to "Add food", new_user_food_path %>
+<%= link_to "Add food", new_food_path %>
