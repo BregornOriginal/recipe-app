@@ -15,9 +15,9 @@
  */
 
 .food-table {
-    display: flex;
-    gap: 4rem;
-} 
+  display: flex;
+  gap: 4rem;
+}
 
 /* .table-items {
     display: flex;
@@ -26,14 +26,14 @@
 } */
 
 .button_to {
-    align-self: center;
+  align-self: center;
 }
 
 /* .table-headings {
     /* display: flex; */
-    /* flex-direction: column; */
 
+/* flex-direction: column; */
 
 .names {
-    display: flex;
+  display: flex;
 }

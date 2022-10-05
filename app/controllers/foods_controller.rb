@@ -20,7 +20,6 @@ class FoodsController < ApplicationController
     end
   end
 
-
   # POST /foods or /foods.json
   def create
     @user = current_user
@@ -38,7 +37,6 @@ class FoodsController < ApplicationController
   end
 
   # PATCH/PUT /foods/1 or /foods/1.json
-
 
   # DELETE /foods/1 or /foods/1.json
   def destroy

@@ -33,7 +33,6 @@ class UsersController < ApplicationController
   end
 
   # PATCH/PUT /users/1 or /users/1.json
- 
 
   # DELETE /users/1 or /users/1.json
   def destroy
