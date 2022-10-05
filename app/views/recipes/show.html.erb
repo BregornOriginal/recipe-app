@@ -9,6 +9,10 @@
     </div>
 </div>
 
+  <%= button_to "Generate shooping list" %>
+
+  <button><%= link_to "Add ingredients", new_user_recipe_recipe_food_url(@user, @recipe) %></button>
+
 <div>
   <% @recipe_foods.each do |elem| %>
   <p>Food</p>
@@ -30,9 +34,6 @@
 
 <div>
  
-  <button><%= link_to "Add ingredients", new_user_recipe_recipe_food_url(@user, @recipe) %></button>
-
-  <%= button_to "Generate shooping list" %>
   
   <%= link_to "Back to recipes", user_recipes_url(current_user.id) %>
 

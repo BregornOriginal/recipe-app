@@ -8,5 +8,6 @@ class Ability
 
     can :manage, Food
     can :manage, RecipeFood, recipe_id: user.id
+    can :manage, Recipe, id: user.id
   end
 end
