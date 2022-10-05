@@ -7,8 +7,7 @@
     <%= render user %>
     <p>
       <%= link_to "Show this user", user %>
+      <%= link_to "Show Foods", user_foods_path(user) %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New user", new_user_path %>
