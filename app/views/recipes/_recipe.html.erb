@@ -1,4 +1,8 @@
-<div>
+<div id="<%= dom_id recipe %>">
+  <p>
+    <strong>User:</strong>
+    <%= recipe.user_id %>
+  </p>
 
   <p>
     <strong>Name:</strong>
@@ -6,8 +10,23 @@
   </p>
 
   <p>
+    <strong>Preperation time:</strong>
+    <%= recipe.preperation_time %>HR
+  </p>
+
+  <p>
+    <strong>Cooking time:</strong>
+    <%= recipe.cooking_time %>HR
+  </p>
+
+  <p>
     <strong>Description:</strong>
     <%= recipe.description %>
+  </p>
+
+  <p>
+    <strong>Public:</strong>
+    <%= recipe.public %>
   </p>
 
 </div>

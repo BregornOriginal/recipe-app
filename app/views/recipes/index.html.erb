@@ -9,7 +9,14 @@
   <% else %>
   <div id="recipes">
     <% @recipes.each do |recipe| %>
-      <%= render recipe %>
+      <p>
+        <strong>Description:</strong>
+        <%= recipe.description %>
+      </p>
+      <p>
+        <strong>Name:</strong>
+        <%= recipe.name %>
+      </p>
       <p>
         <%= link_to "Show this recipe", user_recipe_url(@user.id, recipe.id) %>
       </p>

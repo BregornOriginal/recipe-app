@@ -1,21 +1,18 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
 
-  # GET /recipes or /recipes.json
   def index
     @user = User.find(params[:user_id])
     @recipes = Recipe.where(user_id: @user).order(updated_at: :asc).limit(2)
     @current_user = current_user
   end
 
-  # GET /recipes/1 or /recipes/1.json
   def show
     @user = User.find(params[:user_id])
     @recipe = Recipe.find(params[:id])
     @recipes = Recipe.where(user_id: @user).order(updated_at: :asc).limit(2)
   end
 
-  # GET /recipes/new
   def new
     @user = current_user
     recipe = Recipe.new
@@ -24,7 +21,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # POST /recipes or /recipes.json
   def create
     @user = current_user
     @recipe = @user.recipes.create(recipe_params)
@@ -40,7 +36,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # DELETE /recipes/1 or /recipes/1.json
   def destroy
     @user = current_user
     @recipe = Recipe.find(params[:id])
