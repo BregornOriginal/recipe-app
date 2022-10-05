@@ -9,12 +9,39 @@
     </div>
 </div>
 
+  <div>
+  <h3>Public</h3>
+   <label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+</div>
+
+  <%= button_to "Generate shooping list" %>
+
+  <button><%= link_to "Add ingredients", new_user_recipe_recipe_food_url(@user, @recipe) %></button>
+
+<div>
+  <% @recipe_foods.each do |elem| %>
+  <p>Food</p>
+  
+  <%= elem.food[:name] %>
+  <p>Quantity</p>
+  
+  <%= elem[:quantity] %>
+  
+  <p>Price</p>
+  <%= "$ #{elem.food[:price] * elem[:quantity]}" %>
+  <p>Actions</p>
+   <% if can? :delete, elem %>
+      <%= button_to "Delete", user_recipe_recipe_food_url(@user, @recipe, elem.id), method: :delete %>
+   <% end %>
+
+  <% end %>
+</div>
 
 <div>
  
-  <%= button_to "Add ingredients" %>
-
-  <%= button_to "Generate shooping list" %>
   
   <%= link_to "Back to recipes", user_recipes_url(current_user.id) %>
 

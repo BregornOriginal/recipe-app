@@ -17,6 +17,9 @@
         <strong>Name:</strong>
         <%= recipe.name %>
       </p>
+      <% if can? :delete, recipe %>
+        <%= button_to "Delete", user_recipe_url(@user, recipe.id), method: :delete %>
+      <% end %>
       <p>
         <%= link_to "Show this recipe", user_recipe_url(@user.id, recipe.id) %>
       </p>
