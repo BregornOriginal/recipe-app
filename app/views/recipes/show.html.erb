@@ -10,13 +10,18 @@
 </div>
 
 <div>
+  <% @recipe_foods.each do |elem| %>
   <p>Food</p>
-
+  
+  <%= elem.food[:name] %>
   <p>Quantity</p>
   
-  <p>Price</p>
+  <%= elem[:quantity] %>
   
+  <p>Price</p>
+  <%= "$ #{elem.food[:price] * elem[:quantity]}" %>
   <p>Actions</p>
+  <% end %>
 </div>
 
 <div>
