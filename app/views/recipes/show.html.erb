@@ -1,10 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @recipe %>
+<div>
+    <h1>Recipe <%=@recipe.name%></h1>
+    <div>
+      <p>Cooking time: <%=@recipe.cooking_time%></p>
+      <p>Preperation time: <%=@recipe.preperation_time%></p>
+      <p>Steps go here... </p>
+    </div>
+</div>
+
 
 <div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
+ 
+  <%= button_to "Add ingredients" %>
 
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+  <%= button_to "Generate shooping list" %>
+  
+  <%= link_to "Back to recipes", user_recipes_url(current_user.id) %>
+
 </div>

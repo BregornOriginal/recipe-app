@@ -1,20 +1,4 @@
-<%= form_with(model: recipe) do |form| %>
-  <% if recipe.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
-      <ul>
-        <% recipe.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+<%= form_with model: recipe, url: user_recipes_path, method: :post, local: true, scope: :recipe do |form| %>
 
   <div>
     <%= form.label :name, style: "display: block" %>
@@ -23,12 +7,12 @@
 
   <div>
     <%= form.label :preperation_time, style: "display: block" %>
-    <%= form.time_field :preperation_time %>
+    <%= form.number_field :preperation_time, min: 1, max: 540 %> Minutes
   </div>
 
   <div>
     <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.time_field :cooking_time %>
+    <%= form.number_field :cooking_time, min: 1, max: 540 %> Minutes
   </div>
 
   <div>

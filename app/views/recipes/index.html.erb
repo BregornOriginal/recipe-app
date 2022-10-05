@@ -2,13 +2,26 @@
 
 <h1>Recipes</h1>
 
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+<% if @recipes.empty? %>
+  <div class='notifications'>
+    <h4>This user hasn't create any recipes yet</h4>
+  </div>
+  <% else %>
+  <div id="recipes">
+    <% @recipes.each do |recipe| %>
+      <p>
+        <strong>Description:</strong>
+        <%= recipe.description %>
+      </p>
+      <p>
+        <strong>Name:</strong>
+        <%= recipe.name %>
+      </p>
+      <p>
+        <%= link_to "Show this recipe", user_recipe_url(@user.id, recipe.id) %>
+      </p>
+    <% end %>
+  </div>
   <% end %>
-</div>
 
-<%= link_to "New recipe", new_recipe_path %>
+<%= link_to "New recipe", new_user_recipe_url(@user.id) %>
