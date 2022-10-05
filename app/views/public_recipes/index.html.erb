@@ -1,0 +1,28 @@
+<h1>Public Recipes</h1>
+
+<% if @public_recipes.empty? %>
+  <div class='notifications'>
+    <h4>No Recipes made Public</h4>
+  </div>
+  <% else %>
+  <div id="recipes">
+    <% @public_recipes.each do |recipe| %>
+      <p>
+        <h2><%= recipe.name %></h2>
+      </p>
+      <p>
+        <strong>By</strong>
+        <%= recipe.user.name %>
+      </p>
+      <p>
+      Total food items:
+      </p>
+      <p>
+      Total price:
+      </p>
+      <p>
+        <%= link_to "Show this recipe", user_recipe_url(recipe.user.id, recipe.id) %>
+      </p>
+    <% end %>
+  </div>
+  <% end %>
