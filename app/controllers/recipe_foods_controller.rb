@@ -1,5 +1,4 @@
 class RecipeFoodsController < ApplicationController
-  before_action :set_recipe_food, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   def new
@@ -11,10 +10,11 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.recipe_id = params[:recipe_id]
     @recipe = Recipe.find_by(id: params[:recipe_id])
+    @food = Food.all
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_path(@recipe), notice: 'Recipe food was successfully created.' }
+        format.html { redirect_to user_recipe_url(current_user, @recipe), notice: 'Recipe food was successfully created.' }
         format.json { render :show, status: :created, location: @recipe_food }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,13 +35,8 @@ class RecipeFoodsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_recipe_food
-    @recipe_food = RecipeFood.find(params[:id])
-  end
-
   # Only allow a list of trusted parameters through.
   def recipe_food_params
-    params.require(:recipe_food).permit(:recipe_id, :quantity)
+    params.require(:recipe_food).permit(:food_id, :quantity)
   end
 end
