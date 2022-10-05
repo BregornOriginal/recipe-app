@@ -7,12 +7,12 @@
 
   <div>
     <%= form.label :preperation_time, style: "display: block" %>
-    <%= form.time_field :preperation_time %>
+    <%= form.number_field :preperation_time, min: 1, max: 540 %> Minutes
   </div>
 
   <div>
     <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.time_field :cooking_time %>
+    <%= form.number_field :cooking_time, min: 1, max: 540 %> Minutes
   </div>
 
   <div>
