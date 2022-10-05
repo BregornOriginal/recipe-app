@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Foods</h1>
+<div class='table-headings'>
+
+    <strong>Name</strong>
+    <strong>Measurement unit</strong>
+    <strong>Price</strong>
+    <strong>Quantity</strong>
+    <strong>Action</strong>
 
 <div id="foods">
   <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", user_foods_path %>
-    </p>
-  <% end %>
+    <%if can? :read, food %>
+      <%= render food %>
+    <% end %>
+  <%end%>
+</div>
 </div>
 
 <%= link_to "Add food", new_user_food_path %>
