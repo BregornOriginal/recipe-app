@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = current_user
     @recipe = Recipe.find(params[:id])
     @recipes = Recipe.where(user_id: @user).order(updated_at: :asc).limit(2)
   end

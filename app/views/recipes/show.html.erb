@@ -12,7 +12,7 @@
 
 <div>
  
-  <%= button_to "Add ingredients" %>
+  <button><%= link_to "Add ingredients", new_user_recipe_recipe_food_url(@user, @recipe) %></button>
 
   <%= button_to "Generate shooping list" %>
   
