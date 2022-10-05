@@ -21,6 +21,10 @@
   <p>Price</p>
   <%= "$ #{elem.food[:price] * elem[:quantity]}" %>
   <p>Actions</p>
+   <% if can? :delete, elem %>
+      <%= button_to "Delete", user_recipe_recipe_food_url(@user, @recipe, elem.id), method: :delete %>
+   <% end %>
+
   <% end %>
 </div>
 
