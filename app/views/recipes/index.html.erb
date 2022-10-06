@@ -11,7 +11,9 @@
   <article id="recipes" class="recipe_card">
     <div class="name_container">
         <%= link_to recipe.name, recipe_url(recipe.id), { class: 'recipe_name'} %>
-        <%= button_to "REMOVE", recipe_url(recipe.id), method: :delete %>
+        <% if can? :manage, recipe%>
+          <%= button_to "REMOVE", recipe_url(recipe.id), method: :delete %>
+        <% end %>
     </div>
     <div class="description_container">
       <p class="recipe_description"><%= recipe.description %></p>
