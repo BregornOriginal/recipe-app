@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipes = Recipe.where(user_id: @user).order(updated_at: :asc).limit(2)
+    @recipes = Recipe.all
   end
 
   def show
@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def new
-    recipe = Recipe.new
+    @recipe = Recipe.new
     respond_to do |format|
       format.html { render :new, locals: { recipe: } }
     end

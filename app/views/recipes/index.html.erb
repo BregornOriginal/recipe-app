@@ -9,6 +9,7 @@
   <% else %>
   <div id="recipes">
     <% @recipes.each do |recipe| %>
+      <%if can? :read, recipe %>
       <p>
         <strong>Description:</strong>
         <%= recipe.description %>
@@ -23,6 +24,7 @@
       <p>
         <%= link_to "Show this recipe", recipe_url(recipe.id) %>
       </p>
+      <%end%>
     <% end %>
   </div>
   <% end %>
