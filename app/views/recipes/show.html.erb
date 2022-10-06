@@ -36,9 +36,10 @@
       <td><%= elem.food[:name] %></td>
       <td><%= elem[:quantity] %></td>
       <td><%= "$ #{elem.food[:price] * elem[:quantity]}" %></td>
-      <td><% if can? :delete, elem %>
-            <%= button_to "Delete", recipe_recipe_food_url( @recipe, elem.id), method: :delete %>
-          <% end %>
+      <td>
+      <% if can? :manage, @recipe %>
+          <%= button_to "REMOVE", recipe_recipe_food_path( @recipe, elem), method: :delete %>
+      <% end %>
       </td>
     </tr>
     <% end %>
