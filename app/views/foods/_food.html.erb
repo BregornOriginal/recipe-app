@@ -1,19 +1,9 @@
-<div class="food-table" id="<%= dom_id food %>" >
-  <p class="table-items">
-    <%= food.name %>
-  </p>
-
-  <p class="table-items">
-    <%= food.measurement_unit %>
-  </p>
-
-  <p class="table-items">
-    $<%= food.price %>
-  </p>
-
-  <p class="table-items">
-    <%= food.quantity %>units
-  </p>
-
-  <%= button_to "Destroy this food", user_food_url(user_id: @users.id, id: food.id), method: :delete %>
-</div>
+<tr>
+  <td><%= food.name %></td>
+  <td><%= food.measurement_unit %></td>
+  <td><%= "$ #{food.price}" %></td>
+  <td><%= " #{food.quantity} units" %></td>
+  <td>
+    <%= button_to "Delete", user_food_url(user_id: @users.id, id: food.id), method: :delete, class: 'destroy_food' %>
+  </td>
+</tr>

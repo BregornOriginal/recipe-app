@@ -204,6 +204,12 @@ input:checked + .slider::before {
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+
+  a {
+    align-self: flex-end;
+    margin: 20px 40px 0 0;
+    text-decoration: none;
+  }
 }
 
 .recipe_title {
@@ -235,6 +241,17 @@ input:checked + .slider::before {
   border-collapse: collapse;
   width: 80%;
     th, td {
+      font-size: 16px;
     border: 1px solid;
+  }
+}
+
+.destroy_food {
+  border: none;
+  color: #2508bb;;
+  font-size: 16px;
+  &:hover {
+    color: red;
+    filter: brightness(1);
   }
 }
