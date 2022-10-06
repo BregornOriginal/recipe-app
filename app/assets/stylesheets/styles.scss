@@ -31,11 +31,20 @@ textarea {
   }
 }
 
+.sign_up_container {
+  display: flex;
+  justify-content: center;
+}
+
 .sign_up_form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 150px;
+  border: 5px solid #219cf31a;
+  border-radius: 70px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 500px;
 }
 
 .field {
