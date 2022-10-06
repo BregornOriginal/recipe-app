@@ -15,7 +15,7 @@ class RecipeFoodsController < ApplicationController
     respond_to do |format|
       if @recipe_food.save
         format.html do
-          redirect_to user_recipe_url(current_user, @recipe), notice: 'Recipe food was successfully created.'
+          redirect_to recipe_url(current_user, @recipe), notice: 'Recipe food was successfully created.'
         end
         format.json { render :show, status: :created, location: @recipe_food }
       else
@@ -33,7 +33,7 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to user_recipe_url(current_user, @recipe), notice: 'Recipe food was successfully destroyed.'
+        redirect_to recipe_url(current_user, @recipe), notice: 'Recipe food was successfully destroyed.'
       end
       format.json { head :no_content }
     end
