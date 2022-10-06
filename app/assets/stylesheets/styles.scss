@@ -23,6 +23,11 @@ textarea {
   height: 50px;
 }
 
+.notifications {
+  display: flex;
+  justify-content: center;
+}
+
 .user_name {
   color: rgb(59, 56, 23);
 
@@ -80,6 +85,14 @@ textarea {
 }
 
 button {
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+  }
+}
+
+.button {
   border-radius: 5px;
   &:hover {
     cursor: pointer;
