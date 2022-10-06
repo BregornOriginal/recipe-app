@@ -64,14 +64,29 @@ textarea {
   }
 }
 
+.recipe_information {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    align-self: flex-end;
+    margin: 20px 40px 0 0;
+    text-decoration: none;
+  }
+}
+
 .actions {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
   a {
     margin-top: 5px;
     color: black;
+
     &:hover {
       font-size: 18px;
     }
@@ -88,6 +103,7 @@ textarea {
 button {
   border-radius: 5px;
   font-size: 18px;
+
   &:hover {
     cursor: pointer;
     filter: brightness(0.8);
@@ -96,6 +112,7 @@ button {
 
 .button {
   border-radius: 5px;
+
   &:hover {
     cursor: pointer;
     filter: brightness(0.8);
@@ -178,9 +195,9 @@ input:checked + .slider::before {
 }
 
 .recipe_name {
-    &:hover {
-     color: rgb(20, 88, 151);
-   }
+  &:hover {
+    color: rgb(20, 88, 151);
+  }
 }
 
 .name_container {
@@ -193,22 +210,10 @@ input:checked + .slider::before {
   flex-direction: row;
   margin: 50px;
   justify-content: space-evenly;
-    p{
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-}
 
-.recipe_information {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  align-items: center;
-
-  a {
-    align-self: flex-end;
-    margin: 20px 40px 0 0;
-    text-decoration: none;
+  p {
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 }
 
@@ -240,16 +245,19 @@ input:checked + .slider::before {
   margin: 80px 50px 50px 50px;
   border-collapse: collapse;
   width: 80%;
-    th, td {
-      font-size: 16px;
+
+  th,
+  td {
+    font-size: 16px;
     border: 1px solid;
   }
 }
 
 .destroy_food {
   border: none;
-  color: #2508bb;;
+  color: #2508bb;
   font-size: 16px;
+
   &:hover {
     color: red;
     filter: brightness(1);
