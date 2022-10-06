@@ -1,32 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Recipes</h1>
-
 <% if @recipes.empty? %>
   <div class='notifications'>
     <h4>This user hasn't create any recipes yet</h4>
   </div>
   <% else %>
-  <div id="recipes">
-    <% @recipes.each do |recipe| %>
-      <%if can? :read, recipe %>
-      <p>
-        <strong>Description:</strong>
-        <%= recipe.description %>
-      </p>
-      <p>
-        <strong>Name:</strong>
-        <%= recipe.name %>
-      </p>
-      <% if can? :delete, recipe %>
-        <%= button_to "Delete", recipe_url(recipe.id), method: :delete %>
-      <% end %>
-      <p>
-        <%= link_to "Show this recipe", recipe_url(recipe.id) %>
-      </p>
-      <%end%>
+  <section class='recipe_container'>
+  <h1>Recipes</h1>
+  <% @recipes.each do |recipe| %>
+  <article id="recipes" class="recipe_card">
+    <div class="name_container">
+        <%= link_to recipe.name, recipe_url(recipe.id), { class: 'recipe_name'} %>
+        <%= button_to "REMOVE", recipe_url(recipe.id), method: :delete %>
+    </div>
+    <div class="description_container">
+      <p class="recipe_description"><%= recipe.description %></p>
+    </div>
+  </article>
     <% end %>
-  </div>
   <% end %>
-
+</section>
 <%= link_to "New recipe", new_recipe_url %>
