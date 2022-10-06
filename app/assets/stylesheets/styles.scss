@@ -7,6 +7,10 @@
 
 a {
   text-decoration: none;
+  color: rgb(83, 95, 55);
+  &:hover {
+    color:rgb(20, 88, 151)
+  }
 }
 
 li {
@@ -181,6 +185,17 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
+.recipe_container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin: 50px 0 30px 0;
+  }
+}
+
 .recipe_card {
   display: flex;
   flex-direction: row;
@@ -262,4 +277,19 @@ input:checked + .slider::before {
     color: red;
     filter: brightness(1);
   }
+}
+
+.navigation_bar {
+  padding: 20px 0 0 0;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+  li {
+    margin-right: 10px;
+  }
+}
+
+.nav_links {
+  display: flex;
 }
