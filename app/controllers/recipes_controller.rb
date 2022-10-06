@@ -7,9 +7,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @recipes = Recipe.where(user_id: @user).order(updated_at: :asc)
-    @recipes = Recipe.find_by(id: params[:recipe_id])
-    @recipe_foods = RecipeFood.includes([:food]).where(recipe_id: @recipe.id)
+    @recipe_foods = RecipeFood.includes([:food]).where(recipe_id: params[:id])
   end
 
   def new
@@ -34,12 +32,11 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    @user = current_user
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipes_path(@user.id), notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
