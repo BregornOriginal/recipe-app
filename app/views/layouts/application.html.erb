@@ -21,7 +21,7 @@
     <% if user_signed_in? %>
     <div class= "log_out_container">
       <%= button_to "Log out", destroy_user_session_path,
-       { method: :delete, data: { turbo: false}, class: 'create_button Log out'} %>
+       { method: :delete, data: { turbo: false}, class: 'create_button log_out'} %>
     </div>
     <% end %>
   </nav>
