@@ -46,6 +46,7 @@ textarea {
   flex-direction: column;
   align-items: center;
   margin-top: 150px;
+  padding: 50px;
   border: 5px solid #219cf31a;
   border-radius: 70px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -86,6 +87,7 @@ textarea {
 
 button {
   border-radius: 5px;
+  font-size: 18px;
   &:hover {
     cursor: pointer;
     filter: brightness(0.8);
@@ -186,9 +188,53 @@ input:checked + .slider::before {
   flex-direction: column;
 }
 
-.recipe_container {
+.recipe_detail {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 50px;
+  justify-content: space-evenly;
+    p{
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+}
+
+.recipe_information {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
   align-items: center;
-  align-content: space-between;
+}
+
+.recipe_title {
+  display: flex;
+}
+
+.shopping_button_container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container_recipe_line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px 0 8px 0;
+}
+
+.recipe_line {
+  height: 3px;
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  background: #8f686f;
+}
+
+.recipe_table {
+  margin: 80px 50px 50px 50px;
+  border-collapse: collapse;
+  width: 80%;
+    th, td {
+    border: 1px solid;
+  }
 }
