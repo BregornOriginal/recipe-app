@@ -18,13 +18,13 @@
         <%= recipe.name %>
       </p>
       <% if can? :delete, recipe %>
-        <%= button_to "Delete", user_recipe_url(@user, recipe.id), method: :delete %>
+        <%= button_to "Delete", recipe_url(recipe.id), method: :delete %>
       <% end %>
       <p>
-        <%= link_to "Show this recipe", user_recipe_url(@user.id, recipe.id) %>
+        <%= link_to "Show this recipe", recipe_url(recipe.id) %>
       </p>
     <% end %>
   </div>
   <% end %>
 
-<%= link_to "New recipe", new_user_recipe_url(@user.id) %>
+<%= link_to "New recipe", new_recipe_url %>
