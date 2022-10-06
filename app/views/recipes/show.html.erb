@@ -18,7 +18,8 @@
 </section>
 <div class="shopping_button_container">
   <%= button_to "Generate shooping list" %>
-  <button><%= link_to "Add ingredients", new_user_recipe_recipe_food_url(@user, @recipe) %></button>
+  <button><%= link_to "Add ingredients", new_recipe_recipe_food_url(@recipe) %></button>
+
 </div>
 <div class="container_recipe_line">
 	<hr class="recipe_line" />
@@ -36,12 +37,12 @@
       <td><%= elem[:quantity] %></td>
       <td><%= "$ #{elem.food[:price] * elem[:quantity]}" %></td>
       <td><% if can? :delete, elem %>
-            <%= button_to "Delete", user_recipe_recipe_food_url(@user, @recipe, elem.id), method: :delete %>
+            <%= button_to "Delete", recipe_recipe_food_url( @recipe, elem.id), method: :delete %>
           <% end %>
       </td>
     </tr>
     <% end %>
   </table>
 <div>
-  <%= link_to "Back to recipes", user_recipes_url(current_user.id) %>
+  <%= link_to "Back to recipes", recipes_url(@recipe.id) %>
 </div>

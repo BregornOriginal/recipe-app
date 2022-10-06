@@ -1,6 +1,6 @@
 <div class="recipe_information">
   <p style="color: white"><%= notice %></p>
-  <%= link_to "Add food", new_user_food_path %>
+    <%= link_to "Add food", new_food_path %>
   <h1>Foods</h1>
 </div>
 
@@ -14,10 +14,9 @@
     <th>Action</th>
   </tr>
   <% @foods.each do |food| %>
-    <%if can? :read, food %>
+    <%if can? :manage, food %>
       <%= render food %>
     <% end %>
   <%end%>
   </table>
 </div>
-

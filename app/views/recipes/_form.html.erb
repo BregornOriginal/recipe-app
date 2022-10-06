@@ -3,7 +3,7 @@
   <section class='sign_up_form'>
     <h2>New recipe</h2>
 
-    <%= form_with model: recipe, url: user_recipes_path, method: :post, local: true, scope: :recipe do |form| %>
+  <%= form_with model: recipe, url: recipes_path, method: :post, local: true, scope: :recipe do |form| %>
 
     <div class= "field">
       <%= form.label :name, style: "display: block" %>

@@ -1,10 +1,9 @@
 <section class='sign_up_container'>
-    <%= form_with url: user_recipe_recipe_foods_path(current_user, @recipe),
+  <%= form_with url: recipe_recipe_foods_path,
     method: :post, local: true, scope: :recipe_food do |form| %>
       <% if recipe_food.errors.any? %>
        <div style="color: white">
           <h2><%= pluralize(recipe_food.errors.count, "error") %> Please enter a correct value in the field:</h2>
-
             <ul>
             <% recipe_food.errors.each do |error| %>
               <li><%= error.full_message %></li>

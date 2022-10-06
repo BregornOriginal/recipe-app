@@ -2,20 +2,19 @@ class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new
+    @foods = Food.where(user: current_user)
+    @food = Food.find_by(id: @recipe_food.food_id)
   end
 
   def create
-    @recipe_food = RecipeFood.new(recipe_food_params)
-    @recipe_food.recipe_id = params[:recipe_id]
-    @recipe = Recipe.find_by(id: params[:recipe_id])
-    @food = Food.all
-
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_foods = RecipeFood.new(recipe_food_params)
+    @recipe_foods.recipe = @recipe
     respond_to do |format|
-      if @recipe_food.save
+      if @recipe_foods.save
         format.html do
-          redirect_to user_recipe_url(current_user, @recipe), notice: 'Recipe food was successfully created.'
+          redirect_to recipe_url(@recipe), notice: 'Recipe food was successfully created.'
         end
         format.json { render :show, status: :created, location: @recipe_food }
       else
@@ -33,7 +32,7 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to user_recipe_url(current_user, @recipe), notice: 'Recipe food was successfully destroyed.'
+        redirect_to recipe_url(current_user, @recipe), notice: 'Recipe food was successfully destroyed.'
       end
       format.json { head :no_content }
     end

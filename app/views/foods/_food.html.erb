@@ -4,6 +4,7 @@
   <td><%= "$ #{food.price}" %></td>
   <td><%= " #{food.quantity} units" %></td>
   <td>
-    <%= button_to "Delete", user_food_url(user_id: @users.id, id: food.id), method: :delete, class: 'destroy_food' %>
+  <%= button_to "Destroy this food", food_url(id: food.id), method: :delete %>
   </td>
 </tr>
+
