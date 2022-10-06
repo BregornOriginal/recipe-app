@@ -1,3 +1,88 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #c08585;
+}
+
+.new_user{
+  background-image: url(images/background-recipe.jpg);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+textarea {
+  resize: none;
+  width: 300px;
+  height: 50px;
+}
+
+.user_name {
+  color: rgb(59, 56, 23);
+
+  &:hover {
+    color: darken($color: rgb(255, 251, 0), $amount: 20);
+  }
+}
+
+.sign_up_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.field {
+  margin-bottom: 15px;
+
+  input {
+    border-radius: 8px;
+    // border: none;
+    padding: 10px 100px;
+    text-align: center;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  a {
+    margin-top: 5px;
+    color: black;
+    &:hover {
+      font-size: 18px;
+    }
+  }
+}
+
+.button {
+  border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+  }
+}
+
 .switch {
   position: relative;
   display: inline-block;
