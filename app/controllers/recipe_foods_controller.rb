@@ -3,26 +3,28 @@ class RecipeFoodsController < ApplicationController
 
   def new
     @recipe = Recipe.find(params[:recipe_id])
-    @recipe_food = RecipeFood.new
+    recipe_food = RecipeFood.new
+    respond_to do |format|
+      format.html { render :new, locals: { recipe_food: } }
+    end
   end
 
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.recipe_id = params[:recipe_id]
     @recipe = Recipe.find_by(id: params[:recipe_id])
-    @food = Food.all
-
-    respond_to do |format|
+    @food = Food.find_by(id: params[:food_id])
+    # respond_to do |format|
       if @recipe_food.save
-        format.html do
+        # format.html do
           redirect_to recipe_url(current_user, @recipe), notice: 'Recipe food was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @recipe_food }
+        # end
+        # format.json { render :show, status: :created, location: @recipe_food }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
