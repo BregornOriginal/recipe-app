@@ -8,7 +8,7 @@
   <section class='recipe_container'>
   <h1>Recipes</h1>
   <%= link_to "New recipe", new_recipe_url, class: 'create_button new_recipe' %>
-  <% @recipes.each do |recipe| %>
+  <% @recipes.includes([:user]).each do |recipe| %>
   <article id="recipes" class="recipe_card">
     <div class="name_container">
         <%= link_to recipe.name, recipe_url(recipe.id), { class: 'recipe_name'} %>
