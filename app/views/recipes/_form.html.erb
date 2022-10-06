@@ -1,31 +1,38 @@
-<%= form_with model: recipe, url: user_recipes_path, method: :post, local: true, scope: :recipe do |form| %>
+<section class='sign_up_container'>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <section class='sign_up_form'>
+    <h2>New recipe</h2>
 
-  <div>
-    <%= form.label :preperation_time, style: "display: block" %>
-    <%= form.number_field :preperation_time, min: 1, max: 540 %> Minutes
-  </div>
+    <%= form_with model: recipe, url: user_recipes_path, method: :post, local: true, scope: :recipe do |form| %>
 
-  <div>
-    <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.number_field :cooking_time, min: 1, max: 540 %> Minutes
-  </div>
+    <div class= "field">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+    <div class= "field">
+      <%= form.label :preperation_time, style: "display: block" %>
+      <%= form.number_field :preperation_time, min: 1, max: 540 %> 1 to 540 Minutes
+    </div>
 
-  <div>
-    <%= form.label :public, style: "display: block" %>
-    <%= form.check_box :public %>
-  </div>
+    <div class= "field">
+      <%= form.label :cooking_time, style: "display: block" %>
+      <%= form.number_field :cooking_time, min: 1, max: 540 %> 1 to 540 Minutes
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class= "field">
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div class= "field">
+      <%= form.label :public, style: "display: block" %>
+      <%= form.check_box :public %>
+    </div>
+
+    <div>
+      <%= form.submit "Create recipe", class: 'button sign_up'%>
+    </div>
+    <% end %>
+  </section>
+</section>
