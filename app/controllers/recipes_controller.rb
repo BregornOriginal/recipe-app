@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipes = Recipe.where(user_id: @user).order(updated_at: :asc).limit(2)
     @recipes = Recipe.find_by(id: params[:recipe_id])
-    @recipe_foods = RecipeFood.where(recipe: @recipe)
+    @recipe_foods = RecipeFood.includes([:food]).where(recipe: @recipe)
   end
 
   def new
