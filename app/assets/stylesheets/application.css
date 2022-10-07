@@ -13,27 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.food-table {
-  display: flex;
-  gap: 4rem;
-}
-
-/* .table-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-.button_to {
-  align-self: center;
-}
-
-/* .table-headings {
-    /* display: flex; */
-
-/* flex-direction: column; */
-
-.names {
-  display: flex;
-}
