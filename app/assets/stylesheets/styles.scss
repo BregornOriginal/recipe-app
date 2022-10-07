@@ -331,3 +331,8 @@ input:checked + .slider::before {
 .nav_links {
   display: flex;
 }
+
+.missing_shopping_list {
+  display: flex;
+  justify-content: space-evenly;
+}
