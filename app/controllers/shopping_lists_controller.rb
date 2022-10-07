@@ -1,8 +1,11 @@
 class ShoppingListsController < ApplicationController
-    before_action :authenticate_user!
+  before_action :authenticate_user!
 
-    def index
-        @foods = Food.all
-        @recipe_food = RecipeFood.all
-    end
+  def index
+     @recipe_foods = RecipeFood
+       .joins(:recipe)
+       .group('food_id')
+       .select('food_id, sum(quantity) as quantity')
+       .where(recipes: { user: current_user })
+   end
 end
