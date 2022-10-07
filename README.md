@@ -6,9 +6,6 @@ Also, since sharing recipes is an important part of cooking the app should allow
 
 This app was created with Rails, including Devise for authentication and CanCanCan for authorizations.
 
-There is documentation with the differents Endpoints of the API, where the Developer can check the routes and parameters that he need
-to:
-
 ## Live Version
 
 [Avaible Soon]()
@@ -21,7 +18,6 @@ to:
 - PostgresSQL
 - Devise
 - CanCanCan
-- JWT
 
 Prerequisites
 
@@ -34,7 +30,7 @@ Prerequisites
 
 ## Getting Started
 - To get a local copy of this project clone this repository or download the Zip folder:
-git clone https://github.com/BregornOriginal/blog-app.git
+git clone https://github.com/BregornOriginal/recipe-app.git
 
 - To get started, In the root directory run:
 gem install bundler
