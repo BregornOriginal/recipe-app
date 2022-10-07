@@ -58,11 +58,11 @@ group :development, :test do
   gem 'webdrivers'
 end
 
+  gem 'devise'
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'bullet'
   gem 'cancancan'
-  gem 'devise'
   gem 'letter_opener'
   gem 'web-console'
   gem 'xmpp4r'
