@@ -3,6 +3,7 @@
 <% if @recipes.empty? %>
   <div class='notifications'>
     <h4>This user hasn't create any recipes yet</h4>
+    <%= link_to "New recipe", new_recipe_url, class: 'create_button new_recipe' %>
   </div>
   <% else %>
   <section class='recipe_container'>

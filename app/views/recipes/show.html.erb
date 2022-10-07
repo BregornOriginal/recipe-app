@@ -17,9 +17,12 @@
   </div>
 </section>
 <div class="shopping_button_container">
-  <%= button_to "Generate shooping list" %>
-  <button><%= link_to "Add ingredients", new_recipe_recipe_food_url(@recipe) %></button>
-
+  <button>
+    <%= link_to "Generate shooping list", shopping_lists_path %>
+  </button>
+  <button>
+    <%= link_to "Add ingredients", new_recipe_recipe_food_url(@recipe) %>
+  </button>
 </div>
 <div class="container_recipe_line">
 	<hr class="recipe_line" />

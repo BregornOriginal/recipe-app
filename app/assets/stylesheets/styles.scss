@@ -31,6 +31,8 @@ textarea {
 .notifications {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .user_name {
@@ -322,7 +324,7 @@ input:checked + .slider::before {
   font-size: 18px;
 
   li {
-    margin-right: 10px;
+    margin-right: 15px;
   }
 }
 
