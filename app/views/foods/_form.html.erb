@@ -1,0 +1,39 @@
+<div class="recipe_information">
+  <p style="color: white"><%= notice %></p>
+  <h1>New Food</h1>
+</div>
+<section class='sign_up_container'>
+<%= form_with model: food, url: foods_path, method: :post, local: true, scope: :food do |form| %>
+    <% if food.errors.any? %>
+      <div style="color: white">
+        <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+        <ul>
+          <% food.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <section class='sign_up_form'>
+      <div class="field">
+        <%= form.label :food, style: "display: block" %>
+        <%= form.text_field :name %>
+      </div>
+      <div class="field">
+        <%= form.label :measurement_unit, style: "display: block" %>
+        <%= form.text_field :measurement_unit %>
+      </div>
+      <div class="field">
+        <%= form.label :price, style: "display: block" %>
+        <%= form.number_field :price %>
+      </div>
+      <div class="field">
+        <%= form.label :quantity, style: "display: block" %>
+        <%= form.number_field :quantity %>
+      </div>
+      <div class="field">
+        <%= form.submit "Add food", class: 'button sign_up' %>
+      </div>
+    </section>
+  <% end %>
+</section>

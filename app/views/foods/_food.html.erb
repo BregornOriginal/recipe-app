@@ -1,0 +1,10 @@
+<tr>
+  <td><%= food.name %></td>
+  <td><%= food.measurement_unit %></td>
+  <td><%= "$ #{food.price}" %></td>
+  <td><%= " #{food.quantity} units" %></td>
+  <td>
+  <%= button_to "Destroy this food", food_url(id: food.id), method: :delete %>
+  </td>
+</tr>
+

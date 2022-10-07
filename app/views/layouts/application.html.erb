@@ -8,21 +8,25 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag asset_path('favicon_meal.jpg') %>
   </head>
 
   <body>
-  <% if user_signed_in? %>
-      <nav class='nav_options'>
-        <div class='home_button'>
-          <a href="/" class='create_button'>Home</a>
-        </div>
-        <%= button_to "Log out", destroy_user_session_path, { method: :delete, data: { turbo: false}, class: 'create_button Log out'} %>
-      </nav>
+  <nav class= "navigation_bar">
+    <ul class= "nav_links">
+      <li><%= link_to "Home", public_recipes_path %></li>
+      <li><%= link_to "Show Foods", foods_path %></li>
+      <li><%= link_to "Show Recipes", recipes_path %></li>
+      <li><%= link_to "Public Recipes", public_recipes_path %></li>
+      <li><%= link_to "Generate shooping list", shopping_lists_path %></li>
+    </ul>
+    <% if user_signed_in? %>
+    <div class= "log_out_container">
+      <%= button_to "Log out", destroy_user_session_path,
+       { method: :delete, data: { turbo: false}, class: 'create_button log_out'} %>
+    </div>
     <% end %>
-    
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
+  </nav>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,28 @@
+<% if @public_recipes.empty? %>
+  <div class='notifications'>
+    <h4>No Recipes made Public</h4>
+  </div>
+  <% else %>
+    <section class='recipe_container'>
+      <h1>Public Recipes</h1>
+    <% @public_recipes.includes([:user]).each do |recipe| %>
+      <article id="recipes" class="recipe_card public_recipe">
+        <div class="name_container public_recipe">
+          <p>
+            <h2><%= link_to recipe.name, recipe_url(recipe.id), { class: 'recipe_name'} %></h2>
+          </p>
+          <p><strong>By:</strong>
+            <%= recipe.user.name %>
+          </p>
+        </div>
+        <div class="description_container public_recipe">
+          <p>
+          Total food items: 123
+          </p>
+          <p>Total price: 321
+          </p>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+  </section>

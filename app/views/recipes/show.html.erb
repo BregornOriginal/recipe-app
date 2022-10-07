@@ -1,0 +1,52 @@
+<div class="recipe_information">
+  <p style="color: white"><%= notice %></p>
+  <h1>Recipe <%=@recipe.name%></h1>
+</div>
+<section class= "recipe_detail">
+  <div>
+    <p>Cooking time: <%=@recipe.cooking_time%></p>
+    <p>Preperation time: <%=@recipe.preperation_time%></p>
+    <p>Steps go here... </p>
+  </div>
+  <div>
+    <h3>Public</h3>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</section>
+<div class="shopping_button_container">
+  <button>
+    <%= link_to "Generate shooping list", shopping_lists_path %>
+  </button>
+  <button>
+    <%= link_to "Add ingredients", new_recipe_recipe_food_url(@recipe) %>
+  </button>
+</div>
+<div class="container_recipe_line">
+	<hr class="recipe_line" />
+</div>
+  <table class ="recipe_table">
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  <% @recipe_foods.each do |elem| %>
+    <tr>
+      <td><%= elem.food[:name] %></td>
+      <td><%= elem[:quantity] %></td>
+      <td><%= "$ #{elem.food[:price] * elem[:quantity]}" %></td>
+      <td>
+      <% if can? :manage, @recipe %>
+          <%= button_to "REMOVE", recipe_recipe_food_path( @recipe, elem), method: :delete %>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+<div>
+  <%= link_to "Back to recipes", recipes_url(@recipe.id) %>
+</div>

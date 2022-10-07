@@ -1,0 +1,29 @@
+<div class="recipe_information">
+  <p style="color: white"><%= notice %></p>
+  <h1>Shopping List</h1>
+  <% sum_items = 0
+  total_value = 0 %>
+</div>
+  <table class ="recipe_table">
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+    </tr>
+    <% @recipe_foods.each do |recipe_food| %>
+    <% if recipe_food.quantity > recipe_food.food.quantity %>
+    <% aux = recipe_food.quantity - recipe_food.food.quantity %>
+    <% sum_items += aux 
+        total_value += aux * recipe_food.food.price %>
+    <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= aux %> <%= recipe_food.food.measurement_unit %></td>
+        <td><%= number_to_currency(recipe_food.food.price * aux, unit: '$', precision: 0) %></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </table>
+  <div class="missing_shopping_list">
+    <p>Amount of food items to buy: <%= sum_items %></p>
+    <p>Total value of food needed: $ <%= total_value %></p>
+  </div>

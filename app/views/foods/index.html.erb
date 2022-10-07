@@ -1,0 +1,22 @@
+<div class="recipe_information">
+  <p style="color: white"><%= notice %></p>
+    <%= link_to "Add Food", new_food_path, class: 'create_button new_food' %>
+  <h1>Foods</h1>
+</div>
+
+<div id="foods">
+  <table class ="recipe_table">
+    <tr>
+    <th>Name</th>
+    <th>Measurement Unit</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Action</th>
+  </tr>
+  <% @foods.includes([:user]).each do |food| %>
+    <%if can? :manage, food %>
+      <%= render food %>
+    <% end %>
+  <%end%>
+  </table>
+</div>
