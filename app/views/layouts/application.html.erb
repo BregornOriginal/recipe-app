@@ -11,21 +11,20 @@
   </head>
 
   <body>
-  <nav>
-      <%= link_to "Show Foods", foods_path %>
-      <%= link_to "Show Recipes", recipes_path %>
-      <%= link_to "Public Recipes", public_recipes_path %>
-      <%= link_to "Shopping List", shopping_lists_path %>
-  </nav>
-  <% if user_signed_in? %>
-      <nav class='nav_options'>
-        <div class='home_button'>
-          <%= link_to "Home", public_recipes_path %>
-        </div>
-        <%= button_to "Log out", destroy_user_session_path, { method: :delete, data: { turbo: false}, class: 'create_button Log out'} %>
-      </nav>
+  <nav class= "navigation_bar">
+    <ul class= "nav_links">
+      <li><%= link_to "Home", public_recipes_path %></li>
+      <li><%= link_to "Show Foods", foods_path %></li>
+      <li><%= link_to "Show Recipes", recipes_path %></li>
+      <li><%= link_to "Public Recipes", public_recipes_path %></li>
+    </ul>
+    <% if user_signed_in? %>
+    <div class= "log_out_container">
+      <%= button_to "Log out", destroy_user_session_path,
+       { method: :delete, data: { turbo: false}, class: 'create_button log_out'} %>
+    </div>
     <% end %>
-    
+  </nav>
     <%= yield %>
   </body>
 </html>

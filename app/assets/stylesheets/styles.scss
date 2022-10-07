@@ -7,6 +7,11 @@
 
 a {
   text-decoration: none;
+  color: rgb(83, 95, 55);
+
+  &:hover {
+    color: rgb(20, 88, 151);
+  }
 }
 
 li {
@@ -77,6 +82,17 @@ textarea {
   }
 }
 
+.name_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+
+  a {
+    margin: 20px 0 22px 10px;
+  }
+}
+
 .actions {
   display: flex;
   justify-content: center;
@@ -100,9 +116,28 @@ textarea {
   text-overflow: ellipsis;
 }
 
+.description_container.public_recipe {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 button {
   border-radius: 5px;
   font-size: 18px;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+  }
+}
+
+.create_button {
+  border-radius: 5px;
+  font-size: 18px;
+  border: 2px solid black;
+  padding: 5px;
+  margin-bottom: 30px;
 
   &:hover {
     cursor: pointer;
@@ -181,28 +216,43 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
+.recipe_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    margin: 50px 0 30px 0;
+  }
+}
+
 .recipe_card {
   display: flex;
   flex-direction: row;
+  font-size: 18px;
   justify-content: space-between;
   border: 2px solid black;
   border-radius: 5px;
   padding: 15px;
   margin: 0 20px 10px 20px;
-  width: 80%;
+  width: 60%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+}
+
+.public_recipe {
+  justify-content: space-around;
+
+  h2 {
+    margin-bottom: 15px;
+  }
 }
 
 .recipe_name {
   &:hover {
     color: rgb(20, 88, 151);
   }
-}
-
-.name_container {
-  display: flex;
-  flex-direction: column;
 }
 
 .recipe_detail {
@@ -262,4 +312,20 @@ input:checked + .slider::before {
     color: red;
     filter: brightness(1);
   }
+}
+
+.navigation_bar {
+  padding: 20px 0 0 0;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+
+  li {
+    margin-right: 10px;
+  }
+}
+
+.nav_links {
+  display: flex;
 }
