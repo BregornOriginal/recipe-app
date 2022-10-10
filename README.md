@@ -76,4 +76,4 @@ Give a :star: if you like my project!
 
 ## :pencil: License
 
-This project is [MIT](https://github.com/Gopxfs/catalog-of-my-things/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/BregornOriginal/recipe-app/blob/main/LICENSE) licensed.
