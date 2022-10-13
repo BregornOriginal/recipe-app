@@ -8,7 +8,7 @@ This app was created with Rails, including Devise for authentication and CanCanC
 
 ## Live Version
 
-[Avaible Soon]()
+[Recipe-App](https://bregorn-recipe-app.herokuapp.com/)
 
 ## Built With:
 
